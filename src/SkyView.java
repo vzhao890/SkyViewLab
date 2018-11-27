@@ -9,6 +9,7 @@ public class SkyView
         int scanCount=0;
         for(int i=0;i<numRows;i++)
         {
+            a=scanCount+numCols-1;
             for(int k=0;k<numCols;k++)
             {
                 if(i%2==0)
@@ -17,19 +18,14 @@ public class SkyView
                     scanCount++;
                 }
                 else{
-                    a=scanCount+numCols-1;
+
                     view[i][k]=scanned[a];
+                    scanCount++;
                     a--;
                 }
             }
         }
     }
-    /*
-                        0.3,0.7,0.8,
-                        1.1,1.4,0.4.
-                        0.2,0.5,0.2,
-                        1.6,0.6,0.9};
-     */
     public double getAverage(int startRow, int endRow, int startCol, int endCol)
     {
         double total =0.0;
